@@ -1,7 +1,10 @@
-from pymem import Pymem
 from wizwalker.utils import XYZ
 from icecream import ic
 import time
+from pymem import *
+from pymem.process import *
+from pymem.pattern import *
+import regex as re
 
 pog_pattern ='''10 ea 05 02 ?? ?? ?? ?? ?? ?? ?? ??
                 00 00 00 00 00 00 00 00 00 ?? ?? ??
@@ -43,7 +46,6 @@ class Memory():
     def get_add(self, modname, pattern) -> list:
         module = module_from_name(self.mem.process_handle, modname)
         addresses = pymem.pattern.pattern_scan_all(self.mem.process_handle, pattern)
-        ic(hex(addresses))
         return addresses
 
     def convert_pattern_to_bytes(self, string: str):
@@ -61,7 +63,6 @@ class Memory():
                     final += re.escape(byte)
                 else:
                     final += byte   
-            ic('hi')
 
         return bytes(final)
 
@@ -77,7 +78,7 @@ class Cam(Memory):
         self.mem = mem
         self.topAddress = self.find_base()
         self.BaseAddress: int
-        self.offsets = [0x90, 0x00, 0x08]
+        self.offsets = [0x90, 0x00, 0x08, 0x180]
     
     def find_base(self) -> int:
         self.topAddress = self.get_add("Pirate.exe", self.convert_pattern_to_bytes(pog_pattern))
@@ -95,9 +96,9 @@ class Cam(Memory):
         
     def write_xyz(self, xyz: XYZ) -> None:
         self.BaseAddress = self.getPtrAddress(self.topAddress, self.offsets)
-        self.mem.write_float(self.BaseAddress + 0x180, xyz.x )
-        self.mem.write_float(self.BaseAddress + 0x4, xyz.y)
-        self.mem.write_float(self.BaseAddress + 0x180, xyz.z)
+        self.mem.write_float(self.BaseAddress - 0x8, xyz.x )
+        self.mem.write_float(self.BaseAddress - 0x4, xyz.y)
+        self.mem.write_float(self.BaseAddress, xyz.z)
 
 
 class PlayerModel(Memory):
@@ -166,7 +167,6 @@ class Quest(Memory):
     def read_xyz(self):
         try:
             self.BaseAddress = self.find_base()
-            ic(hex(self.BaseAddress))
             self.xyz = XYZ(self.mem.read_float(self.BaseAddress - 8), self.mem.read_float(self.BaseAddress - 4), self.mem.read_float(self.BaseAddress))
         except pymem.exception.MemoryReadError:
             time.sleep(0.5) # if it fails blame slack
@@ -179,10 +179,6 @@ class Quest(Memory):
         self.mem.write_float(self.BaseAddress - 0x4, xyz.y)
         self.mem.write_float(self.BaseAddress, xyz.z)
 
-from pymem import *
-from pymem.process import *
-from pymem.pattern import *
-import regex as re
 
 
     #return final
@@ -195,8 +191,15 @@ playermodel = PlayerModel(mem)
 player = Player(mem)
 quest = Quest(mem)
 
-while True:
-    ic(quest.read_xyz())
+ic()
+quest = quest.read_xyz()
+ic()
+camera.write_xyz(quest)
+ic()
+playermodel.write_xyz(quest)
+ic()
+player.write_xyz(quest)
+ic()
     #ic(camera.write_xyz(XYZ(10.0, 100.0, 100.0)))
     # import time
     # time.sleep(0.2)
