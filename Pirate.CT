@@ -4,6 +4,7 @@
     <CheatEntry>
       <ID>110</ID>
       <Description>"Cam Z"</Description>
+      <LastState Value="2028.114868" RealAddress="3EF60564"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+020CF614</Address>
       <Offsets>
@@ -19,6 +20,7 @@
     <CheatEntry>
       <ID>186</ID>
       <Description>"Real Z "</Description>
+      <LastState Value="2028.114868" RealAddress="3F96F2CC"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+02064D60</Address>
       <Offsets>
@@ -33,6 +35,7 @@
     <CheatEntry>
       <ID>302</ID>
       <Description>"player Z "</Description>
+      <LastState Value="-4.477231026" RealAddress="117DE7C4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+020CF614</Address>
       <Offsets>
@@ -65,6 +68,7 @@
     <CheatEntry>
       <ID>112</ID>
       <Description>"Cam Z pointerscan result"</Description>
+      <LastState Value="2028.114868" RealAddress="3EF60564"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+020CF614</Address>
       <Offsets>
@@ -80,6 +84,7 @@
     <CheatEntry>
       <ID>114</ID>
       <Description>"Cam Z pointerscan result"</Description>
+      <LastState Value="2028.114868" RealAddress="3EF60564"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+0205DF58</Address>
       <Offsets>
@@ -95,6 +100,7 @@
     <CheatEntry>
       <ID>121</ID>
       <Description>"Cam Z pointerscan result"</Description>
+      <LastState Value="2028.114868" RealAddress="3EF60564"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+0207E368</Address>
       <Offsets>
@@ -110,6 +116,7 @@
     <CheatEntry>
       <ID>122</ID>
       <Description>"Cam Z pointerscan result"</Description>
+      <LastState Value="2028.114868" RealAddress="3EF60564"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+0207E368</Address>
       <Offsets>
@@ -125,6 +132,7 @@
     <CheatEntry>
       <ID>258</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -142,6 +150,7 @@
     <CheatEntry>
       <ID>259</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAD8</Address>
       <Offsets>
@@ -159,6 +168,7 @@
     <CheatEntry>
       <ID>261</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAD8</Address>
       <Offsets>
@@ -176,6 +186,7 @@
     <CheatEntry>
       <ID>270</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -193,6 +204,7 @@
     <CheatEntry>
       <ID>274</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -210,6 +222,7 @@
     <CheatEntry>
       <ID>276</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+020CF614</Address>
       <Offsets>
@@ -227,6 +240,7 @@
     <CheatEntry>
       <ID>277</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+020CF614</Address>
       <Offsets>
@@ -244,6 +258,7 @@
     <CheatEntry>
       <ID>278</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+0207E368</Address>
       <Offsets>
@@ -260,6 +275,7 @@
     <CheatEntry>
       <ID>279</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+0207E368</Address>
       <Offsets>
@@ -277,6 +293,7 @@
     <CheatEntry>
       <ID>281</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -294,6 +311,7 @@
     <CheatEntry>
       <ID>282</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAD8</Address>
       <Offsets>
@@ -311,6 +329,7 @@
     <CheatEntry>
       <ID>286</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -328,6 +347,7 @@
     <CheatEntry>
       <ID>291</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -345,6 +365,7 @@
     <CheatEntry>
       <ID>296</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -361,6 +382,7 @@
     <CheatEntry>
       <ID>297</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAD8</Address>
       <Offsets>
@@ -378,6 +400,7 @@
     <CheatEntry>
       <ID>299</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -395,6 +418,7 @@
     <CheatEntry>
       <ID>300</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -412,6 +436,7 @@
     <CheatEntry>
       <ID>303</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -429,6 +454,7 @@
     <CheatEntry>
       <ID>305</ID>
       <Description>"player Z pointerscan result"</Description>
+      <LastState Value="2241.035889" RealAddress="117DF8F4"/>
       <VariableType>Float</VariableType>
       <Address>"Pirate.exe"+01FFDAE4</Address>
       <Offsets>
@@ -444,613 +470,64 @@
       </Offsets>
     </CheatEntry>
     <CheatEntry>
-      <ID>311</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>8</Offset>
-        <Offset>10</Offset>
-        <Offset>A68</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>312</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>18</Offset>
-        <Offset>3C</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
       <ID>314</ID>
-      <Description>"Quest Z pointerscan result"</Description>
+      <Description>"No Description"</Description>
+      <LastState Value="Nan" RealAddress="2B5DF30C"/>
       <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>8</Offset>
-        <Offset>90</Offset>
-        <Offset>A60</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>316</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>24</Offset>
-        <Offset>9EC</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
+      <Address>2B5DF30C</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>315</ID>
-      <Description>"Quest Z pointerscan result"</Description>
+      <Description>"No Description"</Description>
       <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>0</Offset>
-        <Offset>2B0</Offset>
-      </Offsets>
+      <Address>2B7AF80C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>316</ID>
+      <Description>"No Description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>2A5CFA0C</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>317</ID>
-      <Description>"Quest Z pointerscan result"</Description>
+      <Description>"No Description"</Description>
+      <LastState Value="Nan" RealAddress="2B4FF5CC"/>
       <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
+      <Address>2B4FF5CC</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>318</ID>
-      <Description>"Quest Z pointerscan result"</Description>
+      <Description>"No Description"</Description>
+      <LastState Value="2015.915039" RealAddress="11E6F94C"/>
       <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>288</Offset>
-      </Offsets>
+      <Address>11E6F94C</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>319</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00D0D928</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>0</Offset>
-        <Offset>698</Offset>
-      </Offsets>
+      <Description>"No description"</Description>
+      <LastState Value="48 FD FB 44 EC 4E 9F 2B C4 FB E6 11 A0 F7 22 2F 00 00 DC 06 28 FB E6 11 80 F9 E6 11 C6 F2 D0 77 B4 C9 0E 11 6C 63 36 34 00 00 00 00 9C 17 E9 10 00 00 00 00 00 00 00 00 00 50 43 47 01 00 00 00 BC C1 30 39 44 FE 5B 34 FE 93 53 76 14 15 E9 10 28 8D 3F 02 00 15 E9 10 34 04 D5 77 68 18 9B 26 34 04 D5 77 08 1C 9B 26 00 00 DC 06 8C 66 36 34 A4 DC 81 44 66 07 A1 C2 34 04 D5 77 C8 64 36 34 00 00 DC 06 8C 66 36 34 00 00 DC 06 8C 66 36 34" RealAddress="11E6F94C"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Array of byte</VariableType>
+      <ByteLength>144</ByteLength>
+      <Address>11E6F94C</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>320</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>14</Offset>
-        <Offset>A1C</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
+      <Description>"No description"</Description>
+      <LastState Value="48 FD FB 44 EC 4E 9F 2B C4 FB E6 11 A0 F7 22 2F 00 00 DC 06 28 FB E6 11 80 F9 E6 11 C6 F2 D0 77 B4 C9 0E 11 6C 63 36 34 00 00 00 00 9C 17 E9 10 00 00 00 00 00 00 00 00 00 50 43 47 01 00 00 00 BC C1 30 39 44 FE 5B 34 FE 93 53 76 14 15 E9 10 28 8D 3F 02 00 15 E9 10 34 04 D5 77 68 18 9B 26 34 04 D5 77 08 1C 9B 26 00 00 DC 06 8C 66 36 34 A4 DC 81 44 66 07 A1 C2 34 04 D5 77 C8 64 36 34 00 00 DC 06 8C 66 36 34 00 00 DC 06 8C 66 36 34" RealAddress="11E6F94C"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Array of byte</VariableType>
+      <ByteLength>144</ByteLength>
+      <Address>11E6F94C</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>321</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00928A7C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>4FC</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>322</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A68</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>323</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00928A7C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A68</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>4FC</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>324</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00928A7C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A68</Offset>
-        <Offset>8</Offset>
-        <Offset>A0</Offset>
-        <Offset>4E4</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>325</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>18</Offset>
-        <Offset>28</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>326</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>28</Offset>
-        <Offset>18</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>327</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>28</Offset>
-        <Offset>98</Offset>
-        <Offset>A60</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>328</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>14</Offset>
-        <Offset>58</Offset>
-        <Offset>A0C</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>329</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>40</Offset>
-        <Offset>28</Offset>
-        <Offset>18</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>330</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>68</Offset>
-        <Offset>4</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>0</Offset>
-        <Offset>2B0</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>331</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>68</Offset>
-        <Offset>4</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>332</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>68C</Offset>
-        <Offset>68</Offset>
-        <Offset>4</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>18</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>333</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>6C</Offset>
-        <Offset>18</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>334</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>98</Offset>
-        <Offset>C</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>335</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>98</Offset>
-        <Offset>4C</Offset>
-        <Offset>9EC</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>336</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>6C</Offset>
-        <Offset>18</Offset>
-        <Offset>A1C</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>337</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00D0D928</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>6C</Offset>
-        <Offset>A0C</Offset>
-        <Offset>8</Offset>
-        <Offset>0</Offset>
-        <Offset>698</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>338</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>7A8</Offset>
-        <Offset>30</Offset>
-        <Offset>98</Offset>
-        <Offset>A60</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>FA0</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>339</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00928A7C</Address>
-      <Offsets>
-        <Offset>7F8</Offset>
-        <Offset>0</Offset>
-        <Offset>14</Offset>
-        <Offset>A44</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>4FC</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>340</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00928A7C</Address>
-      <Offsets>
-        <Offset>7F8</Offset>
-        <Offset>0</Offset>
-        <Offset>24</Offset>
-        <Offset>A14</Offset>
-        <Offset>8</Offset>
-        <Offset>A0</Offset>
-        <Offset>4E4</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>341</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>7F8</Offset>
-        <Offset>0</Offset>
-        <Offset>3C</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>342</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>6D4</Offset>
-        <Offset>1C</Offset>
-        <Offset>0</Offset>
-        <Offset>8</Offset>
-        <Offset>A44</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>343</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>5FC</Offset>
-        <Offset>4C</Offset>
-        <Offset>40</Offset>
-        <Offset>40</Offset>
-        <Offset>A68</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>344</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00D0D928</Address>
-      <Offsets>
-        <Offset>4FC</Offset>
-        <Offset>7C</Offset>
-        <Offset>4C</Offset>
-        <Offset>9EC</Offset>
-        <Offset>8</Offset>
-        <Offset>0</Offset>
-        <Offset>698</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>345</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+0040550C</Address>
-      <Offsets>
-        <Offset>650</Offset>
-        <Offset>20</Offset>
-        <Offset>4</Offset>
-        <Offset>7C</Offset>
-        <Offset>A0C</Offset>
-        <Offset>8</Offset>
-        <Offset>280</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>346</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>710</Offset>
-        <Offset>4</Offset>
-        <Offset>18</Offset>
-        <Offset>64</Offset>
-        <Offset>A0C</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>347</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>838</Offset>
-        <Offset>20</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>A4</Offset>
-        <Offset>8</Offset>
-        <Offset>FC8</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>348</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>838</Offset>
-        <Offset>20</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>18</Offset>
-        <Offset>A4</Offset>
-        <Offset>FA0</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>349</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00857884</Address>
-      <Offsets>
-        <Offset>838</Offset>
-        <Offset>20</Offset>
-        <Offset>A38</Offset>
-        <Offset>8</Offset>
-        <Offset>53C</Offset>
-        <Offset>98</Offset>
-        <Offset>510</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>350</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>838</Offset>
-        <Offset>0</Offset>
-        <Offset>C</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>351</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+008A50A0</Address>
-      <Offsets>
-        <Offset>5DC</Offset>
-        <Offset>44</Offset>
-        <Offset>68</Offset>
-        <Offset>84</Offset>
-        <Offset>A60</Offset>
-        <Offset>8</Offset>
-        <Offset>F98</Offset>
-      </Offsets>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>352</ID>
-      <Description>"Quest Z pointerscan result"</Description>
-      <VariableType>Float</VariableType>
-      <Address>"Pirate.exe"+00857884</Address>
-      <Offsets>
-        <Offset>978</Offset>
-        <Offset>9F4</Offset>
-        <Offset>8</Offset>
-        <Offset>53C</Offset>
-        <Offset>668</Offset>
-        <Offset>470</Offset>
-      </Offsets>
+      <Description>"No description"</Description>
+      <LastState Value="48 FD FB 44 EC 4E 9F 2B C4 FB E6 11 A0 F7 22 2F 00 00 DC 06 28 FB E6 11 80 F9 E6 11 C6 F2 D0 77 B4 C9 0E 11 6C 63 36 34 00 00 00 00 9C 17 E9 10 00 00 00 00 00 00 00 00 00 50 43 47 01 00 00 00 BC C1 30 39 44 FE 5B 34 FE 93 53 76 14 15 E9 10 28 8D 3F 02 00 15 E9 10 34 04 D5 77 68 18 9B 26 34 04 D5 77 08 1C 9B 26 00 00 DC 06 8C 66 36 34 A4 DC 81 44 66 07 A1 C2 34 04 D5 77 C8 64 36 34 00 00 DC 06 8C 66 36 34 00 00 DC 06 8C 66 36 34" RealAddress="11E6F94C"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Array of byte</VariableType>
+      <ByteLength>144</ByteLength>
+      <Address>11E6F94C</Address>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
