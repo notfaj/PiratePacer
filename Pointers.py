@@ -329,11 +329,12 @@ async def main():
     player = Player(mem)
     cam = Cam(mem)
     quest = Quest(mem)
+    ic('hooked')
 
     hotkeys = [Hotkey(Keycode.A, questtp, ModifierKeys.CTRL), Hotkey(Keycode.Q, unhook, ModifierKeys.CTRL)] 
     listener = Listener(hotkeys)
     listener.listen_forever()
-    # your program here
+    # your program heresda
     while True:
         await asyncio.sleep(1)
 
