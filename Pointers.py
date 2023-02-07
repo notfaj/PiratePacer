@@ -308,6 +308,14 @@ class Quest(Memory):
 
 import asyncio
 from hotkey import Hotkey, Keycode, ModifierKeys, Listener
+import subprocess
+def isPirateRunning():
+    progs = str(subprocess.check_output('tasklist'))
+    if "Pirate.exe" in progs:
+        
+        return True
+    else:
+        return False
 
 async def main():
     async def questtp():
@@ -323,13 +331,21 @@ async def main():
         cam.close()
         playermodel.close()
         ic('unhooked')
-    
-    mem = Pymem("Pirate.exe")
+    try:
+        mem = Pymem("Pirate.exe")
+    except pymem.exception.ProcessNotFound:
+        print("Pirate101 Isn't running waiting for Pirate to start...")
+        while True:
+            if isPirateRunning() == True:
+                ic("Found Pirate Instance!")
+                break
+            await asyncio.sleep(1.5)
+        mem = Pymem("Pirate.exe")
+        
     playermodel = PlayerModel(mem)
     player = Player(mem)
     cam = Cam(mem)
     quest = Quest(mem)
-    ic('hooked')
 
     hotkeys = [Hotkey(Keycode.A, questtp, ModifierKeys.CTRL), Hotkey(Keycode.Q, unhook, ModifierKeys.CTRL)] 
     listener = Listener(hotkeys)
