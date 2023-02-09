@@ -1,14 +1,49 @@
-from wizwalker.utils import XYZ
-from icecream import ic
+# from loguru import logger
+import loguru
+from loguru import logger
+
+from wizwalker.utils import XYZ, Rectangle, get_pid_from_handle, order_clients, get_windows_from_predicate, set_window_title, set_foreground_window, get_foreground_window, timed_send_key, send_hotkey
+from wizwalker.client import get_window_rectangle, get_window_title
 import time
+import datetime
 from pymem import *
 from pymem.process import *
 from pymem.pattern import *
 import regex
+from typing import List, Callable, Coroutine
+
+import asyncio
+from hotkey import Hotkey, Keycode, ModifierKeys, Listener
+
+import ctypes
+user32 = ctypes.windll.user32
+kernel32 = ctypes.windll.kernel32
+
+from functools import cached_property
+
+
+
+tool_version = '0.0.0'
+tool_name = 'Deimos'
+repo_name = tool_name + '-Pirate101'
+branch = 'master'
+
+
+def generate_timestamp() -> str:
+	# generates a timestamp and makes the symbols filename-friendly
+	time = str(datetime.datetime.now())
+	time_list = time.split('.')
+	time_stamp = str(time_list[0])
+	time_stamp = time_stamp.replace('/', '-').replace(':', '-')
+	return time_stamp
+
+
+
 
 class Memory():
-    def __init__(self) -> None:
-        self.mem: Pymem
+    def __init__(self, mem: Pymem) -> None:
+        self.mem = mem
+        self.active = False
 
     def get_add(self, modname, pattern) -> list:
         addresses = pymem.pattern.pattern_scan_all(self.mem.process_handle, pattern)
@@ -40,7 +75,7 @@ class Memory():
 
 class Cam(Memory):
     def __init__(self, mem: Pymem) -> None:
-        self.mem = mem
+        super().__init__(mem)
         self.pattern = rb'\x89\x87\x80\x01\x00\x00\x8B\x76\x7C'
         self.aob_address = None
         self.newmem = None
@@ -91,8 +126,8 @@ class Cam(Memory):
             return your_variable, aob_address, newmem
 
         self.HookAddress, self.aob_address, self.newmem = Hook_Cam(self.mem, self.pattern)
-        
-        
+
+        self.active = True
         return self.HookAddress
     
     def close(self):
@@ -100,12 +135,13 @@ class Cam(Memory):
         self.mem.write_bytes(self.aob_address, self.pattern, len(self.pattern)) 
         pymem.memory.free_memory(self.mem.process_handle, self.newmem)
         pymem.memory.free_memory(self.mem.process_handle, self.HookAddress)
+        self.active = False
 
     def read_xyz(self) -> XYZ:
-        #ic(hex(self.BaseAddress), self.BaseAddress)
+        #logger.debug(hex(self.BaseAddress), self.BaseAddress)
         try:
             self.BaseAddress = self.mem.read_int(self.HookAddress)
-            ic(self.BaseAddress, hex(self.BaseAddress))
+            loguru.logger.debug(self.BaseAddress, hex(self.BaseAddress))
             self.xyz = XYZ(self.mem.read_float((self.BaseAddress - 0x8)), self.mem.read_float((self.BaseAddress - 0x4)), self.mem.read_float(self.BaseAddress))
         except:
             time.sleep(0.1)
@@ -123,9 +159,11 @@ class Cam(Memory):
             time.sleep(0.1)
             self.write_xyz
 
+
+
 class PlayerModel(Memory):
     def __init__(self, mem: Pymem) -> None:
-        self.mem = mem
+        super().__init__(mem)
         self.BaseAddress = None
 
     def find_base(self):
@@ -147,9 +185,11 @@ class PlayerModel(Memory):
     def close(self):
         pass
 
+
+
 class Player(Memory):
     def __init__(self, mem: Pymem) -> None:
-        self.mem = mem
+        super().__init__(mem)
         self.pattern = rb'\x89\x46\x48\xC6\x47\x68\x01\x8D\x4C\x24\x6C\xC7\x84\x24\x80\x01\x00\x00\xFF\xFF\xFF\xFF'
         self.HookAddress = None
         self.aob_address = None
@@ -200,6 +240,7 @@ class Player(Memory):
             return your_variable, aob_address, newmem
 
         self.HookAddress, self.aob_address, self.newmem = Hook_Real(self.mem, self.pattern)
+        self.active = True
         return self.HookAddress
     
     def close(self):
@@ -207,12 +248,13 @@ class Player(Memory):
         self.mem.write_bytes(self.aob_address, self.pattern, len(self.pattern)) 
         pymem.memory.free_memory(self.mem.process_handle, self.newmem)
         pymem.memory.free_memory(self.mem.process_handle, self.HookAddress)
+        self.active = False
 
     def read_xyz(self) -> XYZ:
-        #ic(hex(self.BaseAddress), self.BaseAddress)
+        #logger.debug(hex(self.BaseAddress), self.BaseAddress)
         try:
             self.BaseAddress = self.mem.read_int(self.HookAddress)
-            ic(self.BaseAddress, hex(self.BaseAddress))
+            loguru.logger.debug(self.BaseAddress, hex(self.BaseAddress))
             self.xyz = XYZ(self.mem.read_float((self.BaseAddress - 0x8)), self.mem.read_float((self.BaseAddress - 0x4)), self.mem.read_float(self.BaseAddress))
         except:
             time.sleep(0.1)
@@ -230,9 +272,11 @@ class Player(Memory):
             time.sleep(0.1)
             self.write_xyz
 
+
+
 class Quest(Memory):
     def __init__(self, mem: Pymem) -> None:
-        self.mem = mem
+        super().__init__(mem)
         self.pattern = rb'\x89\x48\x08\x8A\x44\x24\x1E' # 89 48 08 8A 44 24 1E
         self.aob_address = None
         self.newmem = None
@@ -275,6 +319,7 @@ class Quest(Memory):
             return your_variable, aob_address, newmem
         
         self.HookAddress, self.aob_address, self.newmem = Hook_Quest(self.mem, self.pattern)
+        self.active = True
         return self.HookAddress
     
     def close(self):
@@ -284,9 +329,10 @@ class Quest(Memory):
         self.mem.write_bytes(self.aob_address, self.pattern, len(self.pattern)) 
         pymem.memory.free_memory(self.mem.process_handle, self.newmem)
         pymem.memory.free_memory(self.mem.process_handle, self.HookAddress)
+        self.active = False
 
     def read_xyz(self) -> XYZ:
-        #ic(hex(self.BaseAddress), self.BaseAddress)
+        #logger.debug(hex(self.BaseAddress), self.BaseAddress)
         try:
             self.BaseAddress = self.mem.read_int(self.HookAddress)
             self.xyz = XYZ(self.mem.read_float((self.BaseAddress - 0x8)), self.mem.read_float((self.BaseAddress - 0x4)), self.mem.read_float(self.BaseAddress))
@@ -306,40 +352,268 @@ class Quest(Memory):
             time.sleep(0.1)
             self.write_xyz
 
-import asyncio
-from hotkey import Hotkey, Keycode, ModifierKeys, Listener
+
+
+class Client(): #Thanks to Starrfox and wizwalker for most of the methods here. We're intentionally mimicking how WW handles clients just to give some parity.
+    def __init__(self, handle: int):
+        self.window_handle = handle
+        self.original_title = get_window_title(self.window_handle)
+
+        self.process_id: str = get_pid_from_handle(self.window_handle)
+        self.process_mem: Pymem = Pymem(self.process_id)
+        # self.window_rectangle: Rectangle = get_window_rectangle(self.window_handle)
+
+        self.player: Player = None
+        self.player_model: PlayerModel = None
+        self.camera: Cam = None
+        self.quest: Quest = None
+        self.hooked: bool = False
+
+
+    def __repr__(self):
+        return f"<Client {self.window_handle=} {self.process_id=}>"
+
+
+    @property
+    def title(self) -> str:
+        """
+        Get or set this window's title
+        """
+        return get_window_title(self.window_handle)
+
+
+    @title.setter
+    def title(self, window_title: str):
+        set_window_title(self.window_handle, window_title)
+
+
+    @property
+    def is_foreground(self) -> bool:
+        """
+        If this client is the foreground window
+
+        Set this to True to bring it to the foreground
+        """
+        return get_foreground_window() == self.window_handle
+
+
+    @is_foreground.setter
+    def is_foreground(self, value: bool):
+        if value is False:
+            return
+
+        set_foreground_window(self.window_handle)
+
+
+    @property
+    def window_rectangle(self):
+        """
+        Get this client's window rectangle
+        """
+        return get_window_rectangle(self.window_handle)
+
+    @cached_property
+    def process_id(self) -> int:
+        """
+        Client's process id
+        """
+        return get_pid_from_handle(self.window_handle)
+
+
+    async def send_key(self, key: Keycode, seconds: float = 0):
+        """
+        Send a key
+
+        Args:
+            key: The Keycode to send
+            seconds: How long to send it for
+        """
+        await timed_send_key(self.window_handle, key, seconds)
+
+
+    async def send_hotkey(self, modifers: List[Keycode], key: Keycode):
+        """
+        send a hotkey
+
+        Args:
+            modifers: The key modifers i.e CTRL, ALT
+            key: The key being modified
+        """
+        await send_hotkey(self.window_handle, modifers, key)
+
+
+    async def activate_all_hooks(self, log: bool = True):
+        if self.hooked:
+            return
+
+        self.player_model = PlayerModel(self.process_mem)
+        self.player = Player(self.process_mem)
+        self.camera = Cam(self.process_mem)
+        self.quest = Quest(self.process_mem)
+        self.hooked = True
+
+        if log:
+            loguru.logger.debug("Hooked")
+
+
+    async def deactivate_all_hooks(self, log: bool = True):
+        if not self.hooked:
+            return
+
+        self.player_model.close()
+        self.player.close()
+        self.camera.close()
+        self.quest.close()
+        self.hooked = False
+
+        if log:
+            loguru.logger.debug("Unhooked")
+
+
+    async def teleport(self, xyz: XYZ, move_after: bool = True, log: bool = True):
+        self.player.write_xyz(xyz)
+        self.camera.write_xyz(xyz)
+        self.player_model.write_xyz(xyz)
+
+        if log:
+            loguru.logger.debug(f"Teleported to {xyz}")
+
+        if move_after:
+            await asyncio.sleep(0.1)
+            await self.send_key(Keycode.D, 0.1)
+
+
+    async def quest_teleport(self, move_after: bool = True, log: bool = True):
+        quest_xyz = self.quest.read_xyz()
+        await asyncio.sleep(0)
+        await self.teleport(quest_xyz, move_after, log)
+
+
+
+
+
+
+def get_all_handles_with_name(name: str) -> list:
+    """
+    Get handles to all currently open game clients
+    """
+
+    def callback(handle):
+        class_name = ctypes.create_unicode_buffer(len(name))
+        user32.GetClassNameW(handle, class_name, len(name) + 1)
+        if name == class_name.value:
+            return True
+
+    return get_windows_from_predicate(callback)
+
+
+
+
+
+class ClientHandler():
+    def __init__(self):
+        self.managed_handles: List[int] = []
+        self.clients: List[Client] = []
+        self.client_class: str = "Client"
+
+
+    def get_handles(self, new_only: bool = True):
+        handles = get_all_handles_with_name(self.client_class)
+        if not new_only:
+            return handles
+
+        return [h for h in handles if h not in self.managed_handles]
+
+
+    async def wait_for_handle(self, interval: float = 1.0, log: bool = True):
+        while len(get_all_handles_with_name(self.client_class)) == 0:
+            if log:
+                loguru.logger.debug("Waiting for Pirate101 to be opened...")
+            await asyncio.sleep(interval)
+
+
+    def get_clients(self, new_only: bool = True):
+        self.managed_handles = self.get_handles(new_only)
+        for handle in self.managed_handles:
+            self.clients.append(Client(handle))
+
+
+    def order_clients(self):
+        self.clients = order_clients(self.clients)
+
+
+    def get_ordered_clients(self, new_only: bool = True):
+        self.get_clients(new_only)
+        self.order_clients()
+
+
+    async def activate_all_client_hooks(self, log: bool = True):
+        await asyncio.gather(*[client.activate_all_hooks(log) for client in self.clients])
+        for i, client in enumerate(self.clients):
+            client.title = f"[p{i + 1}] " + client.original_title
+
+
+    async def deactivate_all_client_hooks(self, log: bool = True):
+        await asyncio.gather(*[client.deactivate_all_hooks(log) for client in self.clients])
+        for client in self.clients:
+            client.title = client.original_title
+
+
+
+    def get_foreground_client(self):
+        foreground_clients = [c for c in self.clients if c.is_foreground]
+        if foreground_clients:
+            return foreground_clients[0]
+
+        else:
+            return None
+
+
+    async def foreground_coro(self, coro: Coroutine, *args, **kwargs):
+        """(Async) Runs a method of the foreground client, but only on the foreground client. Does nothing if no clients are selected."""
+        foreground_client = self.get_foreground_client()
+        if foreground_client:
+            await coro(foreground_client, *args, **kwargs)
+
+
+    def foreground_method(self, method: Callable, *args, **kwargs):
+        """Runs a method of the foreground client, but only on the foreground client. Does nothing if no clients are selected."""
+        foreground_client = self.get_foreground_client()
+        if foreground_client:
+            method(foreground_client, *args, **kwargs)
+
+
+
+
 
 async def main():
-    async def questtp():
-        questcord = quest.read_xyz()
-        player.write_xyz(questcord)
-        cam.write_xyz(questcord)
-        playermodel.write_xyz(questcord)
-        ic('teleported')
+    pacer = ClientHandler()
+    await pacer.wait_for_handle()
+    pacer.get_ordered_clients()
+    await pacer.activate_all_client_hooks()
 
-    async def unhook():
-        quest.close()
-        player.close()
-        cam.close()
-        playermodel.close()
-        ic('unhooked')
-    
-    mem = Pymem("Pirate.exe")
-    playermodel = PlayerModel(mem)
-    player = Player(mem)
-    cam = Cam(mem)
-    quest = Quest(mem)
-    ic('hooked')
 
-    hotkeys = [Hotkey(Keycode.A, questtp, ModifierKeys.CTRL), Hotkey(Keycode.Q, unhook, ModifierKeys.CTRL)] 
+    async def quest_teleport_hotkey():
+        await pacer.foreground_coro(Client.quest_teleport)
+
+    async def close_hotkey():
+        await pacer.deactivate_all_client_hooks()
+        raise KeyboardInterrupt
+
+
+    hotkeys = [Hotkey(Keycode.F7, quest_teleport_hotkey), Hotkey(Keycode.F9, close_hotkey)] 
     listener = Listener(hotkeys)
     listener.listen_forever()
     # your program heresda
     while True:
         await asyncio.sleep(1)
 
+
+
 if __name__ == "__main__":
+    current_log = loguru.logger.add(f"logs/{tool_name} - {generate_timestamp()}.log", encoding='utf-8', enqueue=True, backtrace=True)
     asyncio.run(main())
+    loguru.logger.remove()
 
 
 
