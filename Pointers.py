@@ -585,6 +585,16 @@ class ClientHandler():
 
 
 
+# import asyncio
+# from hotkey import Hotkey, Keycode, ModifierKeys, Listener
+# import subprocess
+# def isPirateRunning():
+#     progs = str(subprocess.check_output('tasklist'))
+#     if "Pirate.exe" in progs:
+        
+#         return True
+#     else:
+#         return False
 
 async def main():
     pacer = ClientHandler()
@@ -592,6 +602,27 @@ async def main():
     pacer.get_ordered_clients()
     await pacer.activate_all_client_hooks()
 
+    # async def unhook():
+    #     quest.close()
+    #     player.close()
+    #     cam.close()
+    #     playermodel.close()
+    #     ic('unhooked')
+    # try:
+    #     mem = Pymem("Pirate.exe")
+    # except pymem.exception.ProcessNotFound:
+    #     print("Pirate101 Isn't running waiting for Pirate to start...")
+    #     while True:
+    #         if isPirateRunning() == True:
+    #             ic("Found Pirate Instance!")
+    #             break
+    #         await asyncio.sleep(1.5)
+    #     mem = Pymem("Pirate.exe")
+        
+    # playermodel = PlayerModel(mem)
+    # player = Player(mem)
+    # cam = Cam(mem)
+    # quest = Quest(mem)
 
     async def quest_teleport_hotkey():
         await pacer.foreground_coro(Client.quest_teleport)
