@@ -10,9 +10,6 @@ from wizwalker import XYZ
 
 from .memory import Memory
 
-
-
-
 class Cam(Memory):
     def __init__(self, mem: Pymem) -> None:
         super().__init__(mem)
@@ -20,9 +17,9 @@ class Cam(Memory):
         self.aob_address = None
         self.newmem = None
         self.BaseAddress = None
-        self.HookAddress = self.find_base()
+        self.HookAddress = self.hook()
 
-    def find_base(self) -> int:
+    def hook(self) -> int:
         def Hook_Cam(mem: Pymem, aob: bytes) -> int:
             module = module_from_name(mem.process_handle, "Pirate.exe")
             aob_address = pattern_scan_all(module.process_handle, aob)
@@ -42,8 +39,8 @@ class Cam(Memory):
             byte = bytes()
             
             # 50                  - push eax
-            # 8D 46               - lea eax,[esi+48]
-            byte+= b'\x50\x8D\x46\x48'
+            # 8D 07               - lea eax,[edi]
+            byte+= b'\x50\x8D\x07'
             
             # A3 ?? ?? ?? ??        - mov [your_variable],eax
             byte+= b'\xa3' + your_variable.to_bytes(4, byteorder='little', signed=True)
@@ -70,6 +67,12 @@ class Cam(Memory):
         self.active = True
         return self.HookAddress
     
+    def find_base(self):
+        self.BaseAddress = self.mem.read_int(self.HookAddress)
+        while self.BaseAddress == 0:
+            self.BaseAddress = self.mem.read_int(self.HookAddress)
+        return self.BaseAddress
+
     def close(self):
         self.pattern = b'\x89\x87\x80\x01\x00\x00\x8B\x76\x7C'
         self.mem.write_bytes(self.aob_address, self.pattern, len(self.pattern)) 
@@ -78,23 +81,17 @@ class Cam(Memory):
         self.active = False
 
     def read_xyz(self) -> XYZ:
-        #logger.debug(hex(self.BaseAddress), self.BaseAddress)
-        try:
-            self.BaseAddress = self.mem.read_int(self.HookAddress)
-            logger.debug(self.BaseAddress, hex(self.BaseAddress))
-            self.xyz = XYZ(self.mem.read_float((self.BaseAddress - 0x8)), self.mem.read_float((self.BaseAddress - 0x4)), self.mem.read_float(self.BaseAddress))
-        except:
-            time.sleep(0.1)
-            self.read_xyz()
-            
+        self.find_base()
+        self.xyz = XYZ(
+                    self.mem.read_float(self.BaseAddress + 0x178),
+                    self.mem.read_float(self.BaseAddress + 0x17C),
+                    self.mem.read_float(self.BaseAddress + 0x180)
+                    )
         return self.xyz
     
     def write_xyz(self, xyz: XYZ) -> None:
-        try:
-            self.BaseAddress = self.mem.read_int(self.HookAddress)
-            self.mem.write_float(self.BaseAddress - 0x8, xyz.x )
-            self.mem.write_float(self.BaseAddress - 0x4, xyz.y)
-            self.mem.write_float(self.BaseAddress, xyz.z)
-        except:
-            time.sleep(0.1)
-            self.write_xyz
+        self.find_base()
+        self.mem.write_float(self.BaseAddress + 0x178, xyz.x)
+        self.mem.write_float(self.BaseAddress + 0x17C, xyz.y)
+        self.mem.write_float(self.BaseAddress + 0x180, xyz.z)
+
