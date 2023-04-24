@@ -1,10 +1,9 @@
-from enum import IntFlag
 import win32gui
 from ctypes import byref, c_int, CFUNCTYPE, Structure
 from ctypes.wintypes import WPARAM, MSG, DWORD
 from typing import Callable, Union
 import asyncio
-from wizwalker.constants import Keycode, user32
+from wizwalker.constants import Keycode, user32, ModifierKeys
 
 WH_KEYBOARD_LL = 13
 WM_KEYDOWN = 0x0100
@@ -13,15 +12,6 @@ WM_SYSKEYDOWN = 260
 WM_SYSKEYUP = 261
 HC_ACTION = 0
 
-class ModifierKeys(IntFlag):
-    """
-    Key modifiers
-    """
-
-    ALT = 0x12
-    CTRL = 0x11
-    SHIFT = 0x10
-    NOREPEAT = 0x4000
 
 class KBDLLHOOKSTRUCT(Structure):_fields_=[
 	('vkCode', DWORD),
@@ -105,6 +95,7 @@ class KeyListener:
 		self.mod_keycodes = (Keycode.Left_CONTROL, Keycode.Right_CONTROL, Keycode.Left_SHIFT, Keycode.Right_SHIFT, Keycode.Left_MENU, Keycode.Right_MENU)
 		self.hook = None
 		self.message_loop = None
+		self._message_loop_delay = 0.1
 
 
 	def LowLevelKeyboardProc(self, nCode, wParam, lParam):
@@ -245,7 +236,7 @@ class KeyListener:
 			self.hook.uninstall_hook()
 			self.hook = None
 
-		if self.message is not None:
+		if self.message_loop is not None:
 			self.message_loop.cancel()
 			self.message_loop = None
 
@@ -253,13 +244,18 @@ class KeyListener:
 	async def message(self):
 		message = MSG()
 		while True:
-			msg = win32gui.PeekMessage(
-			0,
-			0,
-			0,
-			0
-			)
-			await asyncio.sleep(0)
+			msg = self.user32.PeekMessageW(
+				byref(message),
+				None,
+				0x311,
+				0x314,
+				1,
+				)
+
+			if msg:
+				self.user32.DispatchMessageW(byref(message))
+
+			await asyncio.sleep(self._message_loop_delay)
 			
 
 
