@@ -95,7 +95,7 @@ class KeyListener:
 		self.mod_keycodes = (Keycode.Left_CONTROL, Keycode.Right_CONTROL, Keycode.Left_SHIFT, Keycode.Right_SHIFT, Keycode.Left_MENU, Keycode.Right_MENU)
 		self.hook = None
 		self.message_loop = None
-		self._message_loop_delay = 0.1
+		self._message_loop_delay = 0
 
 
 	def LowLevelKeyboardProc(self, nCode, wParam, lParam):
